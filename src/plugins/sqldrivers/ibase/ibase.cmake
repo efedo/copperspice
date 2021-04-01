@@ -4,9 +4,9 @@ list(APPEND SQL_PUBLIC_INCLUDES
 )
 
 list(APPEND SQL_INCLUDES
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qsql_ibase.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qibasedriver.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qibaseresult.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qsql_ibase.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qibasedriver.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qibaseresult.h
 )
 
 # if(WITH_IBASE_PLUGIN AND IBASE_FOUND), unsupported at this time
@@ -21,8 +21,8 @@ if (FALSE)
 
    target_sources(CsSqlPsql
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qsql_ibase.cpp
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/ibase/main.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/ibase/qsql_ibase.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/ibase/main.cpp
    )
 
    target_link_libraries(CsSqlIBase

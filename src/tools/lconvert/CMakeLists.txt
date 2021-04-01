@@ -25,7 +25,7 @@ include_directories(
    ${CMAKE_BINARY_DIR}/privateinclude/QtXml/private
 
    ${CMAKE_CURRENT_SOURCE_DIR}
-   ${CMAKE_SOURCE_DIR}/src/tools/shared
+   ${CS_SOURCE_DIR}/src/tools/shared
 )
 
 target_sources(lconvert${TOOLS_SUFFIX}

@@ -10,30 +10,30 @@ list(APPEND SHAREDTOOLS_INCLUDES
    ${CMAKE_BINARY_DIR}/include/QtXml
    ${CMAKE_BINARY_DIR}/privateinclude/QtXml/private
 
-   ${CMAKE_SOURCE_DIR}/src/tools/shared
+   ${CS_SOURCE_DIR}/src/tools/shared
 )
 
 list(APPEND SHAREDTOOLS_HEADERS
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/numerus.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/translator.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/translatormessage.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/qm.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/qph.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/po.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/ts.h
-    ${CMAKE_SOURCE_DIR}/src/tools/shared/xliff.h
+    ${CS_SOURCE_DIR}/src/tools/shared/numerus.h
+    ${CS_SOURCE_DIR}/src/tools/shared/translator.h
+    ${CS_SOURCE_DIR}/src/tools/shared/translatormessage.h
+    ${CS_SOURCE_DIR}/src/tools/shared/qm.h
+    ${CS_SOURCE_DIR}/src/tools/shared/qph.h
+    ${CS_SOURCE_DIR}/src/tools/shared/po.h
+    ${CS_SOURCE_DIR}/src/tools/shared/ts.h
+    ${CS_SOURCE_DIR}/src/tools/shared/xliff.h
 )
 
 target_sources(sharedtools
    PRIVATE
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/numerus.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/translator.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/translatormessage.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/qm.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/qph.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/po.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/ts.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/xliff.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/numerus.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/translator.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/translatormessage.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/qm.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/qph.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/po.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/ts.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/xliff.cpp
 )
 
 function_variable_fixup("${SHAREDTOOLS_EXTRA_CXXFLAGS}" SHAREDTOOLS_EXTRA_CXXFLAGS)

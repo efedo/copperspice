@@ -4,9 +4,9 @@ list(APPEND SQL_PUBLIC_INCLUDES
 )
 
 list(APPEND SQL_INCLUDES
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/psql/qsql_psql.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/psql/qpsqldriver.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/psql/qpsqlresult.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/psql/qsql_psql.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/psql/qpsqldriver.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/psql/qpsqlresult.h
 )
 
 if(WITH_PSQL_PLUGIN AND PostgreSQL_FOUND)
@@ -20,8 +20,8 @@ if(WITH_PSQL_PLUGIN AND PostgreSQL_FOUND)
 
    target_sources(CsSqlPsql
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/psql/qsql_psql.cpp
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/psql/main.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/psql/qsql_psql.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/psql/main.cpp
    )
 
    target_link_libraries(CsSqlPsql

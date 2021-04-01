@@ -11,8 +11,8 @@ include_directories(
    ${CMAKE_BINARY_DIR}/include/QtGui/platformheaders
    ${CMAKE_BINARY_DIR}/privateinclude/QtGui/private/platforms
 
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/harfbuzz/src
+   ${CS_SOURCE_DIR}/src/3rdparty/freetype/include
+   ${CS_SOURCE_DIR}/src/3rdparty/harfbuzz/src
 
    ${CMAKE_CURRENT_SOURCE_DIR}/cocoa
    ${CMAKE_CURRENT_SOURCE_DIR}/windows

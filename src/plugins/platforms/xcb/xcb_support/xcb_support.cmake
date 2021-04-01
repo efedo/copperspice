@@ -123,9 +123,9 @@ if(BUILD_PLATFORMS_XCB_PLUGIN)
 
    target_include_directories(CsXcbSupport
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/harbuzz/src
+      ${CS_SOURCE_DIR}/src/3rdparty/freetype/include
+      ${CS_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
+      ${CS_SOURCE_DIR}/src/3rdparty/harbuzz/src
    )
 
    if(GTK2_FOUND)

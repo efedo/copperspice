@@ -5,7 +5,8 @@ cmake_policy(VERSION 3.8..3.13)
 # support using rpath on Mac OS X
 cmake_policy(SET CMP0042 NEW)
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+set(CS_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(CMAKE_MODULE_PATH "${CS_SOURCE_DIR}/cmake/modules")
 
 # prefer OpenGL libraries from a hardware vendor if available
 set(OpenGL_GL_PREFERENCE GLVND)
@@ -111,7 +112,7 @@ set(CPACK_PACKAGE_VERSION_MINOR ${BUILD_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${BUILD_MICRO})
 
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Cross platform C++ GUI libraries")
-set(CPACK_PACKAGE_DESCRIPTION_FILE    "${CMAKE_SOURCE_DIR}/README.md")
+set(CPACK_PACKAGE_DESCRIPTION_FILE    "${CS_SOURCE_DIR}/README.md")
 
 set(CPACK_PACKAGE_INSTALL_DIRECTORY   ${CMAKE_INSTALL_PREFIX})
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY  OFF)
@@ -484,7 +485,7 @@ if (NOT GLIB2_FOUND)
 endif()
 
 if (NOT ZLIB_FOUND)
-   include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty/zlib)
+   include_directories(${CS_SOURCE_DIR}/src/3rdparty/zlib)
 endif()
 
 if (HAVE_LARGEFILESUPPORT)
@@ -502,11 +503,11 @@ if (HAVE_LARGEFILESUPPORT)
 endif()
 
 configure_file(
-   ${CMAKE_SOURCE_DIR}/cmake/cs-config.h.cmake
+   ${CS_SOURCE_DIR}/cmake/cs-config.h.cmake
    ${CMAKE_BINARY_DIR}/include/cs-config.h
 )
 configure_file(
-   ${CMAKE_SOURCE_DIR}/src/core/global/cs_build_info.h.in
+   ${CS_SOURCE_DIR}/src/core/global/cs_build_info.h.in
    ${CMAKE_BINARY_DIR}/include/QtCore/cs_build_info.h
 )
 
@@ -585,13 +586,13 @@ if (BUILD_TESTS)
 endif()
 
 configure_file(
-   ${CMAKE_SOURCE_DIR}/cmake/CopperSpiceConfig.cmake
+   ${CS_SOURCE_DIR}/cmake/CopperSpiceConfig.cmake
    ${CMAKE_BINARY_DIR}/CopperSpiceConfig.cmake
    @ONLY
 )
 
 configure_file(
-   ${CMAKE_SOURCE_DIR}/cmake/CopperSpiceConfigVersion.cmake
+   ${CS_SOURCE_DIR}/cmake/CopperSpiceConfigVersion.cmake
    ${CMAKE_BINARY_DIR}/CopperSpiceConfigVersion.cmake
    @ONLY
 )
@@ -612,9 +613,9 @@ install(
       ${CMAKE_BINARY_DIR}/CopperSpiceConfig.cmake
       ${CMAKE_BINARY_DIR}/CopperSpiceConfigVersion.cmake
 
-      ${CMAKE_SOURCE_DIR}/cmake/CopperSpiceDeploy.cmake
-      ${CMAKE_SOURCE_DIR}/cmake/CopperSpiceMacros.cmake
-      ${CMAKE_SOURCE_DIR}/cmake/InstallMinGW.cmake
+      ${CS_SOURCE_DIR}/cmake/CopperSpiceDeploy.cmake
+      ${CS_SOURCE_DIR}/cmake/CopperSpiceMacros.cmake
+      ${CS_SOURCE_DIR}/cmake/InstallMinGW.cmake
    DESTINATION ${PKG_PREFIX}
 )
 

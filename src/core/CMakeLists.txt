@@ -44,7 +44,7 @@ include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/thread
    ${CMAKE_CURRENT_SOURCE_DIR}/tools
    ${CMAKE_CURRENT_SOURCE_DIR}/xml
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/harfbuzz/src
+   ${CS_SOURCE_DIR}/src/3rdparty/harfbuzz/src
 )
 
 include(animation/animation.cmake)
@@ -80,24 +80,24 @@ if (ZLIB_FOUND)
 else()
    target_sources(CsCore
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/adler32.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/compress.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/crc32.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/deflate.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/gzclose.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/gzlib.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/gzread.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/gzwrite.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/infback.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/inffast.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/inflate.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/inftrees.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/trees.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/uncompr.c
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib/zutil.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/adler32.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/compress.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/crc32.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/deflate.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/gzclose.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/gzlib.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/gzread.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/gzwrite.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/infback.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/inffast.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/inflate.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/inftrees.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/trees.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/uncompr.c
+      ${CS_SOURCE_DIR}/src/3rdparty/zlib/zutil.c
    )
 
-   include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty)
+   include_directories(${CS_SOURCE_DIR}/src/3rdparty)
 endif()
 
 if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
@@ -109,7 +109,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
       -framework AppKit
       -lobjc
    )
-   include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty/forkfd)
+   include_directories(${CS_SOURCE_DIR}/src/3rdparty/forkfd)
    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/global/Info.plist.app DESTINATION mac)
 
 elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
@@ -118,14 +118,14 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
       dl
       ${CMAKE_THREAD_LIBS_INIT}
    )
-   include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty/forkfd)
+   include_directories(${CS_SOURCE_DIR}/src/3rdparty/forkfd)
 
 elseif(CMAKE_SYSTEM_NAME MATCHES "(OpenBSD|FreeBSD|NetBSD|DragonFly)")
    target_link_libraries(CsCore
       PRIVATE
       ${CMAKE_THREAD_LIBS_INIT}
    )
-   include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty/forkfd)
+   include_directories(${CS_SOURCE_DIR}/src/3rdparty/forkfd)
 
 elseif(CMAKE_SYSTEM_NAME MATCHES "Windows")
    target_link_libraries(CsCore

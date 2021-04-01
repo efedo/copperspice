@@ -90,8 +90,8 @@ if(BUILD_PLATFORMS_WINDOWS_PLUGIN)
 
    target_include_directories(CsGuiWin
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
+      ${CS_SOURCE_DIR}/src/3rdparty/freetype/include
+      ${CS_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
    )
 
    target_link_libraries(CsGuiWin

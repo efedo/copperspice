@@ -4,9 +4,9 @@ list(APPEND SQL_PUBLIC_INCLUDES
 )
 
 list(APPEND SQL_INCLUDES
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qsql_mysql.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qmysqldriver.h
-   ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qmysqlresult.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qsql_mysql.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qmysqldriver.h
+   ${CS_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qmysqlresult.h
 )
 
 if(WITH_MYSQL_PLUGIN AND MySQL_FOUND)
@@ -20,8 +20,8 @@ if(WITH_MYSQL_PLUGIN AND MySQL_FOUND)
 
    target_sources(CsSqlMySql
       PRIVATE
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qsql_mysql.cpp
-      ${CMAKE_SOURCE_DIR}/src/plugins/sqldrivers/mysql/main.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/mysql/qsql_mysql.cpp
+      ${CS_SOURCE_DIR}/src/plugins/sqldrivers/mysql/main.cpp
     )
 
    target_link_libraries(CsSqlMySql

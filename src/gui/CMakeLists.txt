@@ -46,13 +46,13 @@ include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/widgets
 
 
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/harfbuzz/src
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/zlib
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/libtiff/libtiff
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/libmng
-   ${CMAKE_SOURCE_DIR}/src/3rdparty/libpng
+   ${CS_SOURCE_DIR}/src/3rdparty/freetype/include
+   ${CS_SOURCE_DIR}/src/3rdparty/freetype/include/freetype
+   ${CS_SOURCE_DIR}/src/3rdparty/harfbuzz/src
+   ${CS_SOURCE_DIR}/src/3rdparty/zlib
+   ${CS_SOURCE_DIR}/src/3rdparty/libtiff/libtiff
+   ${CS_SOURCE_DIR}/src/3rdparty/libmng
+   ${CS_SOURCE_DIR}/src/3rdparty/libpng
 )
 
 if (${JPEG_FOUND})
@@ -62,7 +62,7 @@ if (${JPEG_FOUND})
    )
 else()
    include_directories(
-      ${CMAKE_SOURCE_DIR}/src/3rdparty/libjpeg
+      ${CS_SOURCE_DIR}/src/3rdparty/libjpeg
    )
 endif()
 

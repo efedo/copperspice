@@ -20,13 +20,13 @@ include_directories(
     ${CMAKE_BINARY_DIR}/privateinclude/QtXml/private
 
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/src/tools/shared
+    ${CS_SOURCE_DIR}/src/tools/shared
 )
 
 target_sources(lupdate${TOOLS_SUFFIX}
    PRIVATE
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/ioutils.cpp
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/simtexth.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/ioutils.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/simtexth.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/merge.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/cpp.cpp

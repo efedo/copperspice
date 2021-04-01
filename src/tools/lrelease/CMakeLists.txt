@@ -20,12 +20,12 @@ include_directories(
    ${CMAKE_BINARY_DIR}/privateinclude/QtXml/private
 
    ${CMAKE_CURRENT_SOURCE_DIR}
-   ${CMAKE_SOURCE_DIR}/src/tools/shared
+   ${CS_SOURCE_DIR}/src/tools/shared
 )
 
 target_sources(lrelease${TOOLS_SUFFIX}
    PRIVATE
-   ${CMAKE_SOURCE_DIR}/src/tools/shared/ioutils.cpp
+   ${CS_SOURCE_DIR}/src/tools/shared/ioutils.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
    $<TARGET_OBJECTS:sharedtools>
 )
