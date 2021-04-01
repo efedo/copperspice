@@ -71,12 +71,18 @@ macro_generate_private("${CORE_PRIVATE_INCLUDES}" QtCore)
 macro_generate_misc("${CORE_INCLUDES}" QtCore)
 macro_generate_misc("${CORE_REGEX_INCLUDES}" QtCore/regex)
 
-if (ZLIB_FOUND)
-   target_link_libraries(CsCore
-      PUBLIC
-      ${ZLIB_LIBRARIES}
-   )
-
+if(ZLIB_FOUND)
+   if(TARGET ZLIB::ZLIB)
+       target_link_libraries(CsCore
+          PUBLIC
+          ZLIB::ZLIB
+       )
+   else()
+       target_link_libraries(CsCore
+          PUBLIC
+          ${ZLIB_LIBRARIES}
+       )
+   endif()
 else()
    target_sources(CsCore
       PRIVATE
